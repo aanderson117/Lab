@@ -2,6 +2,7 @@ import pytest as pytest
 
 from account import *
 
+
 class Test:
     def setup_method(self):
         self.a1 = Account('John')
@@ -27,6 +28,7 @@ class Test:
         self.a2.deposit(-2)
         assert self.a2.get_balance() == 0
         assert self.a2.deposit(-20) == False
+
     def test_withdraw(self):
         self.a1.deposit(20)
         assert self.a1.withdraw(15) == True
@@ -46,6 +48,7 @@ class Test:
         self.a2.deposit(5)
         assert self.a1.get_balance() == 20
         assert self.a2.get_balance() == 5
+
 
 if __name__ == '__main__':
     pytest.main()
