@@ -30,9 +30,12 @@ class Account:
         :param amount: Amount to withdraw
         :return: Returns true if transaction went through, false if it did not go through
         """
-        if amount > 0:
-            self.__account_balance -= amount
-            return True
+        if self.__account_balance > amount:
+            if amount > 0:
+                self.__account_balance -= amount
+                return True
+            else:
+                return False
         else:
             return False
 
